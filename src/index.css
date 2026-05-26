@@ -20,3 +20,35 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.hero-enter,
+.hero-enter-delayed {
+  animation: hero-enter 700ms ease-out both;
+}
+
+.hero-enter-delayed {
+  animation-delay: 120ms;
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-enter,
+  .hero-enter-delayed {
+    animation: none;
+  }
+}

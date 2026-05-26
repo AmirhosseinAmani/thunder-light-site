@@ -1,4 +1,3 @@
-import React from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
@@ -22,9 +21,9 @@ const buttonVariants = cva(
   }
 );
 
-export function Button({ className, variant, size, ...props }) {
+export function Button({ className, variant, size, as: Component = "button", ...props }) {
   return (
-    <button
+    <Component
       className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     />
